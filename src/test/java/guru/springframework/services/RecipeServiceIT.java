@@ -1,6 +1,5 @@
 package guru.springframework.services;
 
-import guru.springframework.Spring5RecipeAppApplication;
 import guru.springframework.commands.RecipeCommand;
 import guru.springframework.converters.RecipeCommandToRecipe;
 import guru.springframework.converters.RecipeToRecipeCommand;
