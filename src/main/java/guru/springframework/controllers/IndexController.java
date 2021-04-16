@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-//    private static Logger LOGGER = LoggerFactory.getLogger(IndexController.class);
-
     private final RecipeService recipeService;
 
     public IndexController(RecipeService recipeService) {
@@ -20,8 +18,8 @@ public class IndexController {
 
     @RequestMapping({"", "/index", "index.html"})
     public String getIndexPage(Model model) {
+        log.debug("Getting Index page");
 
-        log.info("Get index page from index controller.");
         model.addAttribute("recipes", recipeService.getRecipes());
 
         return "index";
