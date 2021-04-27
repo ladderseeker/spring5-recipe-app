@@ -1,6 +1,8 @@
 package guru.springframework.domain;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -8,7 +10,8 @@ import javax.persistence.*;
  * @author XIAO JIN
  * @date 2021/04/09/ 11:19
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {

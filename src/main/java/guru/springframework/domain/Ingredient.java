@@ -1,7 +1,8 @@
 package guru.springframework.domain;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,7 +11,8 @@ import java.math.BigDecimal;
  * @author XIAO JIN
  * @date 2021/04/09/ 14:01
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Ingredient {
@@ -31,7 +33,6 @@ public class Ingredient {
     }
 
     public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
-        this.id = id;
         this.description = description;
         this.amount = amount;
         this.uom = uom;
@@ -43,4 +44,5 @@ public class Ingredient {
         this.uom = uom;
         this.recipe = recipe;
     }
+
 }
