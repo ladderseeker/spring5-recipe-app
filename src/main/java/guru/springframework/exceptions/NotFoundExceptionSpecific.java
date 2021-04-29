@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @date 2021/04/28/ 20:44
  */
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class NotFoundException extends RuntimeException {
+public class NotFoundExceptionSpecific extends RuntimeException {
 
-    public NotFoundException() {
+    public NotFoundExceptionSpecific() {
         super();
     }
 
-    public NotFoundException(String message) {
+    public NotFoundExceptionSpecific(String message) {
         super(message);
     }
 
-    public NotFoundException(String message, Throwable cause) {
+    public NotFoundExceptionSpecific(String message, Throwable cause) {
         super(message, cause);
     }
 

@@ -5,7 +5,7 @@ import guru.springframework.converters.RecipeCommandToRecipe;
 import guru.springframework.converters.RecipeToRecipeCommand;
 import guru.springframework.domain.Recipe;
 import guru.springframework.repositories.RecipeRepository;
-import guru.springframework.exceptions.NotFoundException;
+import guru.springframework.exceptions.NotFoundExceptionSpecific;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,7 +48,7 @@ public class RecipeServiceImpl implements RecipeService {
 
         if (!recipeOptional.isPresent()) {
 //            throw new RuntimeException("Recipe Not Found!");
-            throw new NotFoundException("Recipe Not Found");
+            throw new NotFoundExceptionSpecific("Recipe Not Found");
         }
 
         return recipeOptional.get();

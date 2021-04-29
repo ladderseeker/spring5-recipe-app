@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import guru.springframework.exceptions.NotFoundException;
+import guru.springframework.exceptions.NotFoundExceptionSpecific;
 
 /**
  * @author XIAO JIN
@@ -61,7 +61,7 @@ public class RecipeController {
     }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(NotFoundException.class)
+    @ExceptionHandler(NotFoundExceptionSpecific.class)
     public ModelAndView handleNotFound(){
 
         log.error("Handling not found exception");
