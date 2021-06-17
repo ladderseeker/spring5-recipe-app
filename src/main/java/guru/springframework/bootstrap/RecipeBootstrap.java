@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,6 +35,13 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     public void onApplicationEvent(ContextRefreshedEvent event) {
         recipeRepository.saveAll(getRecipes());
         log.debug("Loading Bootstrap Data");
+
+        try {
+            throw new RuntimeException("Test Exception");
+        } catch (Exception e) {
+            log.error("Track test exception {}", Arrays.toString(e.getStackTrace()));
+            e.printStackTrace();
+        }
     }
 
     private List<Recipe> getRecipes() {
